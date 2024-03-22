@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Area of Triangle, in PHP" />
+  <meta name="description" content="Area of triangle, in PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Manya" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>Area of Triangle,in PHP</title>
+  <title>Area of triangle,in PHP</title>
 </head>
 
 <body>
@@ -29,27 +29,22 @@
       <div class="right-image">
         <img src="./images/area_of_trinagle.png" alt="triangle image" />
       </div>
-      <br />
-      <div class="page-content">Enter the base and height in cm.</div>
       <div class="page-content-php">
-        <form action="answer.php" method="POST">
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="base-of-triangle">
-            <label class="mdl-textfield__label" for="base-of-triangle">Base of triangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="height-of-triangle">
-            <label class="mdl-textfield__label" for="height-of-rectangle">Height of triangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <!-- Accent-colored raised button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-            Calculate
-          </button>
-        </form>
+        <div id="user-info">
+          <?php
+          $baseOfTriangle = $_POST["base-of-triangle"];
+          $heightOfTriangle = $_POST["height-of-triangle"];
+
+          // process
+          $area = $baseOfTriangle * $heightOfTriangle;
+
+          // output
+          echo "If a triangle has base = " . $baseOfTriangle . " cm and the height = " . $heightOfTriangle . " cm:";
+          echo "<br />";
+          echo "<br />";
+          echo "The area of the triangle is " . $area . " cm².";
+          ?>
+        </div>
       </div>
     </main>
   </div>
